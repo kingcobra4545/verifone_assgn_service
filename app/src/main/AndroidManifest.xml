@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.prajwal.analyticsserviceapp">
+
+    <permission
+        android:name="com.prajwal.analyticsserviceapp.PERMISSION_ANALYTICS"
+        android:protectionLevel="signature" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        tools:targetApi="31">
+
+        <service
+            android:name=".AnalyticsService"
+            android:exported="true"
+            android:process=":analytics">
+            <intent-filter>
+                <action android:name="com.prajwal.analyticsserviceapp.ANALYTICS_SERVICE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
